@@ -1,0 +1,7 @@
+bin/
+obj/
+publish/
+*.user
+.vs/
+appsettings.Development.json
+toasty.exe
