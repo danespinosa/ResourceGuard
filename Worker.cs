@@ -286,7 +286,7 @@ public class Worker(ILogger<Worker> logger, IOptions<ResourceGuardOptions> optio
         var psi = new ProcessStartInfo
         {
             FileName = "cmd.exe",
-            Arguments = $"/k copilot \"{escaped}\"",
+            Arguments = $"/k copilot -p \"{escaped}\"",
             UseShellExecute = true
         };
         Process.Start(psi);
