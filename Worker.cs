@@ -282,10 +282,11 @@ public class Worker(ILogger<Worker> logger, IOptions<ResourceGuardOptions> optio
                  $"Top processes: {topProcs}. What should I do?"
         };
 
+        var escaped = prompt.Replace("\"", "\\\"");
         var psi = new ProcessStartInfo
         {
-            FileName = "copilot",
-            Arguments = $"\"{prompt}\"",
+            FileName = "cmd.exe",
+            Arguments = $"/k copilot \"{escaped}\"",
             UseShellExecute = true
         };
         Process.Start(psi);
